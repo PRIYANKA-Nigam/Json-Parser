@@ -34,6 +34,7 @@ ArrayList<JokesModel> arrayList;
     JokesModel model =arrayList.get(position);
     holder.t1.setText(model.getJokes());
     holder.t2.setText(model.getAnswer());
+        holder.t3.setText(""+(position+1));
     }
 
     @Override
@@ -42,11 +43,12 @@ ArrayList<JokesModel> arrayList;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-    TextView t1,t2;
+    TextView t1,t2,t3;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             t1=itemView.findViewById(R.id.textView);
             t2=itemView.findViewById(R.id.textView2);
+            t3=itemView.findViewById(R.id.tt);
         }
     }
 }

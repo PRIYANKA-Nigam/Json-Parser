@@ -1,4 +1,4 @@
-package com.example.jsonparsing;
+package com.example.jsonparsing.Singers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,15 +8,20 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-public class ComicViewActivity extends AppCompatActivity {
-    WebView webView;
-    TextView textView;
+import com.example.jsonparsing.R;
+
+public class SingerViewActivity extends AppCompatActivity {
+TextView textView;
+WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comic_view);
-        String title = getIntent().getStringExtra("title");
-        String link = getIntent().getStringExtra("comic");
+        setContentView(R.layout.activity_singer_view);
+        textView=findViewById(R.id.textView19);
+        webView=findViewById(R.id.visible);
+        String link=getIntent().getStringExtra("link");
+        String title=getIntent().getStringExtra("title");
+        textView.setText(title);
         webView.loadUrl(link);
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient());

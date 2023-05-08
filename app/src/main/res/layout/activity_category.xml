@@ -260,7 +260,7 @@
                 android:layout_weight="1"
                 android:background="#ff0000"
                 android:gravity="center"
-                android:text="Bollywood"
+                android:text="Hollywood"
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -276,7 +276,7 @@
                 android:layout_weight="1"
                 android:background="#ff0000"
                 android:gravity="center"
-                android:text="Hollywood"
+                android:text="Bollywood"
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />

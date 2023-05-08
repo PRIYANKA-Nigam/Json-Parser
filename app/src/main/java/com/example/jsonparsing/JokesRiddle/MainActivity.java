@@ -1,4 +1,4 @@
-package com.example.jsonparsing;
+package com.example.jsonparsing.JokesRiddle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,8 +11,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.jsonparsing.JokesRiddle.JokeAdapter;
-import com.example.jsonparsing.JokesRiddle.JokesModel;
+import com.example.jsonparsing.Comics.ComicModel;
+import com.example.jsonparsing.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

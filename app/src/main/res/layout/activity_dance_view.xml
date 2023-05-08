@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Comics.ComicViewActivity">
+    tools:context=".Dance.DanceViewActivity">
+
     <TextView
-        android:id="@+id/tb1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/textView21"
+        android:layout_width="238dp"
+        android:layout_height="47dp"
+        android:text="TextView"
         android:textStyle="bold"
-        android:textSize="20dp"
-        android:text="Answer"
         android:gravity="center"
-        android:layout_gravity="center"/>
+        android:textSize="20dp"
+        android:layout_marginStart="80dp"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="11dp" />
     <WebView
         android:id="@+id/full"
         android:layout_width="380dp"
         android:layout_height="543dp"
-        android:layout_below="@id/tb1"
+        android:layout_below="@id/textView21"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="15dp"

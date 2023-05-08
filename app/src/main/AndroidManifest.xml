@@ -11,8 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JsonParsing">
-        <activity android:name=".ComicActivity"></activity>
-        <activity android:name=".ComicViewActivity" />
+        <activity android:name=".TVshowsActivity"></activity>
+        <activity android:name=".Bollywood.BollywoodActivity" />
+        <activity android:name=".Hollywood.HollywoodViewActivity" />
+        <activity android:name=".Hollywood.HollywoodActivity" />
+        <activity android:name=".Netflix.NetflixViewActivity" />
+        <activity android:name=".Netflix.NetflixActivity" />
+        <activity android:name=".Youtube.YoutubeViewActivity" />
+        <activity android:name=".Youtube.YoutubeActivity" />
+        <activity android:name=".Singers.SingerViewActivity" />
+        <activity android:name=".Singers.SingerActivity" />
+        <activity android:name=".Actor.ActorActivity" />
+        <activity android:name=".Dance.DanceActivity" />
+        <activity android:name=".Dance.DanceViewActivity" />
+        <activity android:name=".SportsActivity" />
+        <activity android:name=".Novel.NovelViewActivity" />
+        <activity android:name=".Novel.NovelActivity" />
+        <activity android:name=".Comics.ComicActivity" />
+        <activity android:name=".Comics.ComicViewActivity" />
         <activity android:name=".CategoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".JokesRiddle.MainActivity" />
     </application>
 
 </manifest>

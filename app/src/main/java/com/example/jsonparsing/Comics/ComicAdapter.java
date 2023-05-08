@@ -1,4 +1,4 @@
-package com.example.jsonparsing;
+package com.example.jsonparsing.Comics;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.example.jsonparsing.R;
 
 import java.util.ArrayList;
 
@@ -41,26 +41,27 @@ ArrayList<ComicModel> arrayList;
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
     ComicModel model = arrayList.get(position);
         final String[] s = new String[1];
-//        holder.webView.loadUrl(model.getComic());
-//        holder.webView.setWebViewClient(new WebViewClient());
-//        holder.webView.setWebChromeClient(new WebChromeClient());
-//        holder.webView.getSettings().setJavaScriptEnabled(true);
-//        holder.webView. setWebViewClient(new WebViewClient(){
-//            @Override
-//            public void onPageStarted(WebView view, String url, Bitmap favicon){
-//                super.onPageStarted(view, url, favicon);
-//                s[0] =view.getUrl();
-//                Log.e("URL", url);
-//            }
-//        });
+        holder.webView.loadUrl(model.getWeb());
+        holder.webView.setWebViewClient(new WebViewClient());
+        holder.webView.setWebChromeClient(new WebChromeClient());
+        holder.webView.getSettings().setJavaScriptEnabled(true);
+        holder.webView. setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon){
+                super.onPageStarted(view, url, favicon);
+                s[0] =view.getUrl();
+                Log.e("URL", url);
+            }
+        });
     holder.textView.setText(model.getTitle());
-    Glide.with(context).load(model.getImage()).into(holder.imageView);
+        holder.textView2.setText(""+(position+1));
+//    Glide.with(context).load(model.getImage()).into(holder.imageView);
     holder.cardView.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent intent =new Intent(context,ComicViewActivity.class);
             intent.putExtra("title",model.getTitle());
-//            intent.putExtra("comic",s[0]);
+            intent.putExtra("comic",s[0]);
             context.startActivity(intent);
         }
     });
@@ -72,14 +73,14 @@ ArrayList<ComicModel> arrayList;
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
-TextView textView;
-ImageView imageView;
+TextView textView,textView2;
 CardView cardView;
-//WebView webView;
+WebView webView;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
-            imageView= itemView.findViewById(R.id.imageView);
+            textView2=itemView.findViewById(R.id.tt);
+           webView=itemView.findViewById(R.id.visible);
             cardView= itemView.findViewById(R.id.cd);
         }
     }
