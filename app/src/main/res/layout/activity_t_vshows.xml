@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".TVshowsActivity">
+    tools:context=".TVShows.TVshowsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec"

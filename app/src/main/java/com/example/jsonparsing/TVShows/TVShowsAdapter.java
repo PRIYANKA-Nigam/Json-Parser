@@ -1,6 +1,7 @@
-package com.example.jsonparsing;
+package com.example.jsonparsing.TVShows;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,7 +18,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.jsonparsing.Youtube.YoutubeAdapter;
+import com.example.jsonparsing.R;
+import com.example.jsonparsing.TVShowsViewActivity;
 
 import java.util.ArrayList;
 
@@ -43,7 +45,7 @@ public class TVShowsAdapter extends RecyclerView.Adapter<TVShowsAdapter.MyViewHo
     holder.t1.setText(model.getLanguage());
     holder.t2.setText(model.getGenres());
     holder.t3.setText(model.getRating());
-    holder.t4.setText(model.getCountry());
+//    holder.t4.setText(model.getCountry());
     holder.t5.setText(model.getSummary());
     holder.t6.setText(model.getTitle());
     holder.t7.setText(""+(position+1));
@@ -59,6 +61,19 @@ public class TVShowsAdapter extends RecyclerView.Adapter<TVShowsAdapter.MyViewHo
                 super.onPageStarted(view, url, favicon);
                 s[0] =view.getUrl();
                 Log.e("URL", url);
+            }
+        });
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, TVShowsViewActivity.class);
+                intent.putExtra("title",model.getTitle());
+                intent.putExtra("language",model.getLanguage());
+                intent.putExtra("genre",model.getGenres());
+                intent.putExtra("rating",model.getRating());
+                intent.putExtra("summary",model.getSummary());
+                intent.putExtra("web",s[0]);
+                context.startActivity(intent);
             }
         });
     }

@@ -61,7 +61,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -110,7 +110,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -148,7 +148,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -197,7 +197,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -246,7 +246,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -293,7 +293,7 @@
             android:textStyle="bold" />
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -334,13 +334,13 @@
             android:layout_gravity="center"
             android:background="#000"
             android:gravity="center"
-            android:text="Top 400 Billionaires 2020"
+            android:text="World's Billionaire"
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -354,7 +354,7 @@
                 android:layout_weight="1"
                 android:background="#ff0000"
                 android:gravity="center"
-                android:text="World's Billionaires"
+                android:text="2021 Billionaires"
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -370,11 +370,30 @@
                 android:layout_weight="1"
                 android:background="#ff0000"
                 android:gravity="center"
-                android:text="Bollywood Quiz"
+                android:text="2022 Billionaires"
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
         </LinearLayout>
-
+        <TextView
+            android:layout_width="335dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:gravity="center"
+            android:text="Bollywood"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ff0000"
+            android:gravity="center"
+            android:text="Bollywood Quiz"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>

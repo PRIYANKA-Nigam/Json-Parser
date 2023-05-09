@@ -8,17 +8,21 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.jsonparsing.Actor.ActorActivity;
+import com.example.jsonparsing.Billionaire.BillionaireActivity;
+import com.example.jsonparsing.Billionaire.BillionaireActivity2;
 import com.example.jsonparsing.Bollywood.BollywoodActivity;
+import com.example.jsonparsing.BollywoodQuiz.BollywoodQuizActivity;
 import com.example.jsonparsing.Comics.ComicActivity;
 import com.example.jsonparsing.Hollywood.HollywoodActivity;
 import com.example.jsonparsing.JokesRiddle.MainActivity;
 import com.example.jsonparsing.Netflix.NetflixActivity;
 import com.example.jsonparsing.Novel.NovelActivity;
 import com.example.jsonparsing.Singers.SingerActivity;
+import com.example.jsonparsing.TVShows.TVshowsActivity;
 import com.example.jsonparsing.Youtube.YoutubeActivity;
 
 public class CategoryActivity extends AppCompatActivity {
-TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16;
+TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,7 @@ TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16;
         t14=findViewById(R.id.textView16);
         t15=findViewById(R.id.textView17);
         t16=findViewById(R.id.textView18);
+        t17=findViewById(R.id.textView19);
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -162,8 +167,9 @@ TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16;
         t13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(CategoryActivity.this,HollywoodActivity.class);
+                Intent intent=new Intent(CategoryActivity.this, TVshowsActivity.class);
                 intent.putExtra("url","https://run.mocky.io/v3/90ccd1e4-2d16-4f57-9cf1-a1825287e443");
+                intent.putExtra("type","tvshows");        //not working
                 startActivity(intent);
 
             }
@@ -171,8 +177,9 @@ TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16;
         t14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(CategoryActivity.this,MainActivity.class);
+                Intent intent=new Intent(CategoryActivity.this,BandsActivity.class);
                 intent.putExtra("url","https://run.mocky.io/v3/486962d6-0f52-45a3-85b1-1a0b639f74c3");
+                intent.putExtra("type","bands");
                 startActivity(intent);
 
             }
@@ -180,8 +187,9 @@ TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16;
         t15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(CategoryActivity.this,MainActivity.class);
+                Intent intent=new Intent(CategoryActivity.this, BillionaireActivity.class);
                 intent.putExtra("url","https://run.mocky.io/v3/19ecad85-30c8-40cb-a135-8d235351f8d0");
+                intent.putExtra("type","billionaires2021");
                 startActivity(intent);
 
             }
@@ -189,8 +197,20 @@ TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16;
         t16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(CategoryActivity.this,MainActivity.class);
-                intent.putExtra("url","https://run.mocky.io/v3/6376582a-eef7-4a62-8a4b-912862addb0d");
+                Intent intent=new Intent(CategoryActivity.this, BillionaireActivity2.class);
+                intent.putExtra("url","https://run.mocky.io/v3/01ad9348-995f-45ec-a98d-2023b73a0bb1");
+                intent.putExtra("type","billionaires2022");
+                startActivity(intent);
+
+            }
+        });
+        t17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(CategoryActivity.this, BollywoodQuizActivity.class);
+//                intent.putExtra("url","https://run.mocky.io/v3/6376582a-eef7-4a62-8a4b-912862addb0d");
+                intent.putExtra("url","https://run.mocky.io/v3/882dab4f-f138-43dc-a9bb-b2e568c21f0f");
+                intent.putExtra("type","quiz");
                 startActivity(intent);
 
             }

@@ -11,7 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JsonParsing">
-        <activity android:name=".TVshowsActivity"></activity>
+        <activity android:name=".TVShowsViewActivity"></activity>
+        <activity android:name=".BollywoodQuiz.QuizActivity" />
+        <activity android:name=".BollywoodQuiz.BollywoodQuizActivity" />
+        <activity android:name=".Billionaire.BillionaireViewActivity2" />
+        <activity android:name=".Billionaire.BillionaireActivity2" />
+        <activity android:name=".Billionaire.BillionaireViewActivity" />
+        <activity android:name=".Billionaire.BillionaireActivity" />
+        <activity android:name=".BandsActivity" />
+        <activity android:name=".TVShows.TVshowsActivity" />
         <activity android:name=".Bollywood.BollywoodActivity" />
         <activity android:name=".Hollywood.HollywoodViewActivity" />
         <activity android:name=".Hollywood.HollywoodActivity" />

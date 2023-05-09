@@ -1,17 +1,16 @@
-package com.example.jsonparsing;
+package com.example.jsonparsing.TVShows;
 
 public class TVShowsModel {
     String title,language,genres,rating,country,summary,image,web;
 
-    public TVShowsModel(String title, String language, String genres, String rating, String country, String summary, String image, String web) {
+    public TVShowsModel(String title, String language, String genres, String rating,String image, String summary, String web) {
         this.title = title;
         this.language = language;
         this.genres = genres;
         this.rating = rating;
-        this.country = country;
         this.summary = summary;
-        this.image = image;
         this.web = web;
+        this.image=image;
     }
 
     public String getTitle() {

@@ -1,4 +1,4 @@
-package com.example.jsonparsing;
+package com.example.jsonparsing.TVShows;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,9 +11,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.jsonparsing.Bollywood.BollywoodActivity;
-import com.example.jsonparsing.Bollywood.BollywoodAdapter;
-import com.example.jsonparsing.Bollywood.BollywoodModel;
+import com.example.jsonparsing.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -70,14 +68,18 @@ public class TVshowsActivity extends AppCompatActivity {
                 }
                 JSONObject actors = childObj.getJSONObject("rating");
                 String rating=actors.getString("average");
-                JSONObject c=childObj.getJSONObject("network");
-                JSONObject d=c.getJSONObject("country");
-                String country=d.getString("name");
+//                JSONObject c=childObj.getJSONObject("network");
+//                JSONObject d=c.getJSONObject("country");
+//                String country=d.getString("name");
                 String plot = childObj.getString("summary");
                 JSONObject object=childObj.getJSONObject("image");
                 String image=object.getString("original");
+                String s[]=image.split(":");
+                String p="https:"+s[1];
                 String web =childObj.getString("url");
-            TVShowsModel model = new TVShowsModel(title,language,gen,rating,country,plot,image,web);
+                String a[]=web.split(":");
+                String link="https:"+a[1];
+            TVShowsModel model = new TVShowsModel(title,language,gen,rating,p,plot,link);
                 arrayList.add(model);
             }
             adapter.notifyDataSetChanged();
