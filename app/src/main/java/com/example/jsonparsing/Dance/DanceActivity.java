@@ -6,12 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.jsonparsing.R;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -19,7 +21,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class DanceActivity extends AppCompatActivity {
-    private static final String TAG = "dance";
+    private static final String TAG = "DanceActivity";
     RequestQueue requestQueue;
     ArrayList<DanceModel> arrayList;
     RecyclerView recyclerView;
@@ -29,7 +31,8 @@ public class DanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dance);
         String link=getIntent().getStringExtra("url");
-        String type= getIntent().getStringExtra("type");
+        Log.d(TAG, "onCreate: "+ link);
+//        String type= getIntent().getStringExtra("type");
         seeView(link);
     }
 
@@ -42,35 +45,48 @@ public class DanceActivity extends AppCompatActivity {
         adapter=new DanceAdapter(DanceActivity.this,arrayList);
         recyclerView.setAdapter(adapter);
 //        int i = adapter.getItemCount();
-//        callApi("https://run.mocky.io/v3/77e9bcca-3593-43a3-abae-6ccd1f1c153f");
         callApi(link);
     }
 
     private void callApi(String link) {
+        //Toast.makeText(this,link,Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "callApi: "+ link);
         StringRequest stringRequest =new StringRequest(Request.Method.GET,link, response -> {
-            Log.d(TAG, "callApi: "+ response);
-            extract(response);
 
-        },error -> Log.d("error",error.toString()));
+            Log.d(TAG, "callApi: "+ response);
+//            DanceModelTest modelTest = new Gson().fromJson(response,DanceModelTest.class);
+//            if (!modelTest.dance.isEmpty()){
+//                Toast.makeText(this,Integer.toString(modelTest.dance.size()),Toast.LENGTH_SHORT).show();
+//            }
+            extract(response.toString());// run app
+        },error -> {
+            Toast.makeText(this,error.toString(),Toast.LENGTH_SHORT).show();
+            Log.d("callApi:",error.toString());
+        });
         requestQueue.add(stringRequest);
     }
 
     private void extract(String response) {
         try {
-            JSONObject jsonObject = new JSONObject(response);
-            JSONArray movies = jsonObject.getJSONArray("dance");
-            for (int i=0; i<movies.length(); i++){
-                JSONObject childObj = movies.getJSONObject(i);
-                String desc = childObj.getString("description");
-                String title = childObj.getString("style");
+            JSONObject jsonObject = new JSONObject(String.valueOf(response));
+            if (jsonObject.has("dance")){
+                JSONArray movies = jsonObject.getJSONArray("dance");
+                for (int i=0; i<movies.length(); i++){
+                    JSONObject childObj = movies.getJSONObject(i);
+                    if (childObj.has("style")){
+                        String title = childObj.getString("style");
                 String web = childObj.getString("link");
-                //   textView.setText(title+""+overview);
-               DanceModel model = new DanceModel(web,title,desc);
-                arrayList.add(model);
+                        DanceModel model = new DanceModel(title,web);
+                        arrayList.add(model);
+                        adapter.notifyDataSetChanged();
+                    }
+
+                }
             }
-            adapter.notifyDataSetChanged();
+            Toast.makeText(this,Integer.toString(arrayList.size()),Toast.LENGTH_SHORT).show();
         } catch (Exception jsonException) {
             jsonException.printStackTrace();
+            Toast.makeText(this,jsonException.getMessage(),Toast.LENGTH_SHORT).show();
         }
     }
 }

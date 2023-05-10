@@ -1,12 +1,12 @@
 package com.example.jsonparsing.Dance;
 
 public class DanceModel {
-    String web,title,desc;
+    String web,title;
 
-    public DanceModel(String image, String title, String author) {
-        this.web = image;
+
+    public DanceModel( String title,String web) {
+        this.web = web;
         this.title = title;
-        this.desc = author;
     }
 
     public String getWeb() {
@@ -25,11 +25,4 @@ public class DanceModel {
         this.title = title;
     }
 
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
 }

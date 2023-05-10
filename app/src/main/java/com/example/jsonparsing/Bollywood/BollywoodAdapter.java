@@ -1,6 +1,7 @@
 package com.example.jsonparsing.Bollywood;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,19 @@ public class BollywoodAdapter extends RecyclerView.Adapter<BollywoodAdapter.MyVi
     holder.t5.setText(model.getTitle());
     holder.t6.setText(""+(position+1));
         Glide.with(context).load(model.getImage()).into(holder.imageView);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, BollywoodViewActivity.class);
+                intent.putExtra("title",model.getTitle());
+                intent.putExtra("year",model.getYear());
+                intent.putExtra("genre",model.getGenre());
+                intent.putExtra("story",model.getStory());
+                intent.putExtra("actor",model.getActors());
+                intent.putExtra("img",model.getImage());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

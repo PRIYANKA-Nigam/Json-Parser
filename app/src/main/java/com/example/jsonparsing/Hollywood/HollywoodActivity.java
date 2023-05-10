@@ -60,7 +60,7 @@ public class HollywoodActivity extends AppCompatActivity {
             for (int i=0; i<movies.length(); i++){
                 JSONObject childObj = movies.getJSONObject(i);
                 String date = childObj.getString("Year");
-                String title = childObj.getString("title");
+                String title = childObj.getString("Title");
                 String genre = childObj.getString("Genre");
                 String director= childObj.getString("Director");
                 String writer = childObj.getString("Writer");
@@ -70,7 +70,9 @@ public class HollywoodActivity extends AppCompatActivity {
                 String country = childObj.getString("Country");
                 String awards = childObj.getString("Awards");
                 String poster = childObj.getString("Poster");
-             HollywoodModel model = new HollywoodModel(title,date,genre,director,writer,actors,plot,language,country,awards,poster);
+                String[] s=poster.split(":");
+                String pos="https:"+s[1];
+             HollywoodModel model = new HollywoodModel(title,date,genre,director,writer,actors,plot,language,country,awards,pos);
                 arrayList.add(model);
             }
             adapter.notifyDataSetChanged();

@@ -42,8 +42,8 @@ ArrayList<SingerModal> arrayList;
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         SingerModal modal=arrayList.get(position);
 holder.t1.setText(modal.getName());
-holder.t4.setText(modal.getGenres());
-holder.t2.setText(modal.getFollowers());
+holder.t4.setText("Genres-\n"+modal.getGenres());
+holder.t2.setText("Followers-"+modal.getFollowers());
 holder.t3.setText(""+(position+1));
 Glide.with(context).load(modal.getImage()).into(holder.imageView);
         final String[] s = new String[1];

@@ -3,7 +3,7 @@ package com.example.jsonparsing.Bollywood;
 public class BollywoodModel {
     String title,year,genre,story,actors,image;
 
-    public BollywoodModel(String title, String year, String genre, String story, String actors, String image) {
+    public BollywoodModel(String title, String year,String genre,String story,String actors,String image) {
         this.title = title;
         this.year = year;
         this.genre = genre;

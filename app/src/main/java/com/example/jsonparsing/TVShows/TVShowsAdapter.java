@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.jsonparsing.R;
-import com.example.jsonparsing.TVShowsViewActivity;
 
 import java.util.ArrayList;
 

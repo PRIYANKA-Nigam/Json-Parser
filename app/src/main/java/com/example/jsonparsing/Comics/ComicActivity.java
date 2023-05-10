@@ -62,7 +62,9 @@ ComicAdapter adapter;
                 JSONObject childObj = movies.getJSONObject(i);
                 String title = childObj.getString("title");
                 String overview = childObj.getString("url");
-                ComicModel model = new ComicModel(title,overview);
+                String []p=overview.split(":");
+                String url ="https:"+p[1];
+                ComicModel model = new ComicModel(title,url);
                  list.add(model);
             }
             adapter.notifyDataSetChanged();

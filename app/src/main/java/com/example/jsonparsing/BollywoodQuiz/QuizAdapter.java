@@ -2,6 +2,9 @@ package com.example.jsonparsing.BollywoodQuiz;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.text.Html;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,25 +45,20 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder>{
      holder.b3.setText(model.getAnswer3());
      holder.b4.setText(model.getAnswer4());
      holder.textView2.setText(""+(position+1));
-//     holder.textView3.setOnClickListener(new View.OnClickListener() {
-//         @Override
-//         public void onClick(View view) {
-//             Intent intent=new Intent(context,QuizActivity.class);
-//             intent.putExtra("correct",String.valueOf(c));
-//             intent.putExtra("wrong",String.valueOf(w));
-//             context.startActivity(intent);
-//         }
-//     });
      holder.b1.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
              if(arrayList.get(position).getCorrect().equals(arrayList.get(position).getAnswer1())) {
                  c++;
-                 Toast.makeText(view.getContext(), "Correct", Toast.LENGTH_LONG).show();
+                 Toast t=Toast.makeText(view.getContext(), Html.fromHtml("<big><h1><font color='#90EE90' ><b>Correct</b></font></h1></big>"), Toast.LENGTH_LONG);
+                  t.show(); //given custom layout using Html.fromHtml()[android11 feature]
              }
              else {
                  w++;
-                 Toast.makeText(view.getContext(), "wrong!!! , Correct -"+arrayList.get(position).getCorrect(), Toast.LENGTH_LONG).show();
+                 Toast t=Toast.makeText(view.getContext(), Html.fromHtml("<h1><font color='#FF0000' ><b><u>wrong</u>!!! <br><br>  " +
+                     "<big>Correct is -" +arrayList.get(position).getCorrect()+"</big></b></font></h1>"), Toast.LENGTH_LONG);
+                 t.setGravity(Gravity.TOP, 0, 0);
+                 t.show();
              }
 
          }
@@ -70,11 +68,15 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder>{
             public void onClick(View view) {
                 if(arrayList.get(position).getCorrect().equals(arrayList.get(position).getAnswer2())) {
                     c++;
-                    Toast.makeText(view.getContext(), "Correct", Toast.LENGTH_LONG).show();
+                    Toast t=Toast.makeText(view.getContext(), Html.fromHtml("<big><h1><font color='#90EE90' ><b>Correct</b></font></h1></big>"), Toast.LENGTH_LONG);
+                    t.show();
                 }
                 else {
                     w++;
-                    Toast.makeText(view.getContext(), "wrong!!! , Correct -"+arrayList.get(position).getCorrect(), Toast.LENGTH_LONG).show();
+                    Toast t=Toast.makeText(view.getContext(), Html.fromHtml("<h1><font color='#FF0000' ><b><u>wrong</u>!!! <br><br>  " +
+                            "<big>Correct is -" +arrayList.get(position).getCorrect()+"</big></b></font></h1>"), Toast.LENGTH_LONG);
+                    t.setGravity(Gravity.TOP, 0, 0);
+                    t.show();
                 }
 
             }
@@ -84,11 +86,15 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder>{
             public void onClick(View view) {
                 if(arrayList.get(position).getCorrect().equals(arrayList.get(position).getAnswer3())) {
                     c++;
-                    Toast.makeText(view.getContext(), "Correct", Toast.LENGTH_LONG).show();
+                    Toast t=Toast.makeText(view.getContext(), Html.fromHtml("<big><h1><font color='#90EE90' ><b>Correct</b></font></h1></big>"), Toast.LENGTH_LONG);
+                    t.show();
                 }
                 else {
                     w++;
-                    Toast.makeText(view.getContext(), "wrong!!! , Correct -"+arrayList.get(position).getCorrect(), Toast.LENGTH_LONG).show();
+                    Toast t=Toast.makeText(view.getContext(), Html.fromHtml("<h1><font color='#FF0000' ><b><u>wrong</u>!!! <br><br>  " +
+                            "<big>Correct is -" +arrayList.get(position).getCorrect()+"</big></b></font></h1>"), Toast.LENGTH_LONG);
+                    t.setGravity(Gravity.TOP, 0, 0);
+                    t.show();
                 }
 
             }
@@ -98,11 +104,15 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder>{
             public void onClick(View view) {
                 if(arrayList.get(position).getCorrect().equals(arrayList.get(position).getAnswer4())) {
                     c++;
-                    Toast.makeText(view.getContext(), "Correct", Toast.LENGTH_LONG).show();
+                    Toast t=Toast.makeText(view.getContext(), Html.fromHtml("<big><h1><font color='#90EE90' ><b>Correct</b></font></h1></big>"), Toast.LENGTH_LONG);
+                    t.show();
                 }
                 else {
                     w++;
-                    Toast.makeText(view.getContext(), "wrong!!! , Correct -"+arrayList.get(position).getCorrect(), Toast.LENGTH_LONG).show();
+                    Toast t=Toast.makeText(view.getContext(), Html.fromHtml("<h1><font color='#FF0000' ><b><u>wrong</u>!!! <br><br>  " +
+                            "<big>Correct is -" +arrayList.get(position).getCorrect()+"</big></b></font></h1>"), Toast.LENGTH_LONG);
+                    t.setGravity(Gravity.TOP, 0, 0);
+                    t.show();
                 }
 
             }

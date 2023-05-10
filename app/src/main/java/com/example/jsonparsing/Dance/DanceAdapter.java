@@ -53,7 +53,6 @@ public class DanceAdapter extends RecyclerView.Adapter<DanceAdapter.MyViewHolder
             }
         });
         holder.t1.setText(model.getTitle());
-        holder.t2.setText(model.getDesc());
         holder.t3.setText(""+(position+1));
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +78,6 @@ public class DanceAdapter extends RecyclerView.Adapter<DanceAdapter.MyViewHolder
             super(itemView);
             webView =itemView.findViewById(R.id.visible);
             t1=itemView.findViewById(R.id.textView);
-            t2=itemView.findViewById(R.id.textView2);
             t3=itemView.findViewById(R.id.tt);
             cardView = itemView.findViewById(R.id.cd);
         }

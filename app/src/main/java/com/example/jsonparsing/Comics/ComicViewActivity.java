@@ -17,7 +17,10 @@ public class ComicViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comic_view);
+        webView=findViewById(R.id.full);
+        textView=findViewById(R.id.tb1);
         String title = getIntent().getStringExtra("title");
+        textView.setText(title);
         String link = getIntent().getStringExtra("comic");
         webView.loadUrl(link);
         webView.setWebViewClient(new WebViewClient());

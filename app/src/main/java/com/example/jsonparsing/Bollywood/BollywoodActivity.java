@@ -60,15 +60,15 @@ public class BollywoodActivity extends AppCompatActivity {
             for (int i=0; i<movies.length(); i++){
                 String gen="";String actor="";
                 JSONObject childObj = movies.getJSONObject(i);
-                String date = childObj.getString("Year");
+                String date = childObj.getString("year");
                 String title = childObj.getString("title");
                JSONArray genre = childObj.getJSONArray("genres");
                for(int j=0;j<genre.length();j++){
                    gen+=genre.getString(j)+",";
                }
-               JSONArray actors = childObj.getJSONArray("Actors");
+               JSONArray actors = childObj.getJSONArray("actors");
                 for(int k=0;k<actors.length();k++){
-                 actor=actors.getString(k)+",";
+                 actor+=actors.getString(k)+",";
                 }
                 String plot = childObj.getString("storyline");
                 String poster = childObj.getString("posterurl");

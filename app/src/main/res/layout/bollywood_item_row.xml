@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cd"
         app:cardCornerRadius="15dp"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:layout_width="match_parent"
         app:cardBackgroundColor="#FF0000"
         app:cardElevation="20dp">
@@ -77,9 +77,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="center|left"
+                    android:gravity="center"
                     android:text="Answer"
-                    android:textSize="15dp"
+                    android:textSize="25dp"
                     android:textStyle="bold" />
 
 

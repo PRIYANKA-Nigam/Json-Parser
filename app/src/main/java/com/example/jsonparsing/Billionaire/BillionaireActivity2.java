@@ -20,7 +20,6 @@ import java.util.ArrayList;
 
 public class BillionaireActivity2 extends AppCompatActivity {
     private static final String TAG = "bill";
-    public static String types="2";
     RequestQueue requestQueue;
     ArrayList<BillionaireModel2> arrayList;
     RecyclerView recyclerView;
@@ -31,7 +30,6 @@ public class BillionaireActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_billionaire2);
         String link=getIntent().getStringExtra("url");
-//       S type= getIntent().getStringExtra("type");
         seeView(link);
     }
 
