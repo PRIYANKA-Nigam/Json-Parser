@@ -11,8 +11,8 @@
         android:layout_width="383dp"
         android:layout_height="650dp"
         android:paddingTop="27sp"
-        android:divider="@color/black"
-        android:dividerHeight="1dp"
+        android:divider="@color/white"
+        android:dividerHeight="4dp"
         android:headerDividersEnabled="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />

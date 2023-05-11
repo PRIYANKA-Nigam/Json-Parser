@@ -1,22 +1,29 @@
 package com.example.jsonparsing.Song;
 
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.speech.RecognizerIntent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.jsonparsing.R;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class SongAdapter extends RecyclerView.Adapter<SongAdapter.MyViewHolder>{
     Context context;
@@ -53,8 +60,11 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.MyViewHolder>{
                } catch(Exception e) {
                    System.out.println(e.toString());
                }
+
+
            }
        });
+
        holder.imageView3.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
@@ -64,19 +74,23 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.MyViewHolder>{
        holder.textView2.setText(""+(position+1));
     }
 
+
+
     @Override
     public int getItemCount() {
         return arrayList.size();
     }
 
+
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView textView,textView2,textView3;
+        TextView textView,textView2,textView3,t;
         ImageView imageView1,imageView2,imageView3;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.textView);
             textView2=itemView.findViewById(R.id.tt);
             textView3=itemView.findViewById(R.id.textViews);textView3.setVisibility(View.GONE);
+            t=itemView.findViewById(R.id.t);
             imageView1=itemView.findViewById(R.id.img);
             imageView2=itemView.findViewById(R.id.imageView4);
             imageView3=itemView.findViewById(R.id.imageView5);

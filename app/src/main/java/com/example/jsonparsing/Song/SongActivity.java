@@ -1,12 +1,18 @@
 package com.example.jsonparsing.Song;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,6 +24,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class SongActivity extends AppCompatActivity {
 TextView textView;
@@ -34,7 +41,9 @@ RecyclerView recyclerView;
         seeView(link);
         textView=findViewById(R.id.textView19);
         textView.setText(type);
+
     }
+
 
     private void seeView(String link) {
         requestQueue = Volley.newRequestQueue(this);
@@ -44,6 +53,7 @@ RecyclerView recyclerView;
         arrayList=new ArrayList<>();
         adapter=new SongAdapter(this,arrayList);
         recyclerView.setAdapter(adapter);
+
         callApi(link);
     }
 

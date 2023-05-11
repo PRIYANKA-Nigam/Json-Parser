@@ -41,6 +41,9 @@
             android:id="@+id/ll"
             android:layout_width="393dp"
             android:layout_height="match_parent"
+            android:divider="@color/white"
+            android:dividerHeight="4dp"
+            android:headerDividersEnabled="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="65dp" />
 
