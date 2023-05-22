@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JsonParsing">
-        <activity android:name=".Song.SongActivity"></activity>
+        <activity android:name=".USActivity"></activity>
+        <activity android:name=".Population.WorldActivity" />
+        <activity android:name=".Song.SongActivity" />
         <activity android:name=".Billionaire.BillionaireActivity3" />
         <activity android:name=".Bollywood.BollywoodViewActivity" />
         <activity android:name=".TVShows.TVShowsViewActivity" />

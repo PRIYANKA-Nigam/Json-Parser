@@ -19,13 +19,14 @@ import com.example.jsonparsing.Hollywood.HollywoodActivity;
 import com.example.jsonparsing.JokesRiddle.MainActivity;
 import com.example.jsonparsing.Netflix.NetflixActivity;
 import com.example.jsonparsing.Novel.NovelActivity;
+import com.example.jsonparsing.Population.WorldActivity;
 import com.example.jsonparsing.Singers.SingerActivity;
 import com.example.jsonparsing.Song.SongActivity;
 import com.example.jsonparsing.TVShows.TVshowsActivity;
 import com.example.jsonparsing.Youtube.YoutubeActivity;
 
 public class CategoryActivity extends AppCompatActivity {
-TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19;
+TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19,t20,t21;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,9 @@ TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19;
         t17=findViewById(R.id.textView19);
         t18=findViewById(R.id.textView20);
         t19=findViewById(R.id.textView21);
+        t20=findViewById(R.id.textView22);
+        t21=findViewById(R.id.textView23);
+
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -234,6 +238,26 @@ TextView t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19;
             public void onClick(View view) {
                 Intent intent=new Intent(CategoryActivity.this, SongActivity.class);
                 intent.putExtra("url","https://run.mocky.io/v3/469e3665-dd1d-4143-9601-903037bee832");
+                intent.putExtra("type","songs");
+                startActivity(intent);
+
+            }
+        });
+        t20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(CategoryActivity.this, WorldActivity.class);
+                intent.putExtra("url","https://run.mocky.io/v3/9d369302-63c0-4264-a3cb-d7441646572c");
+                intent.putExtra("type","songs");
+                startActivity(intent);
+
+            }
+        });
+        t21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(CategoryActivity.this, USActivity.class);
+                intent.putExtra("url","https://run.mocky.io/v3/18b7aa2c-d996-44ae-af4d-1df78677d549");
                 intent.putExtra("type","songs");
                 startActivity(intent);
 

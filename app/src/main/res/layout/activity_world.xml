@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".Population.WorldActivity">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="5dp">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tab"
+        android:layout_marginTop="15dp"
+        android:stretchColumns="*"
+        android:shrinkColumns="*">
+        <TableRow
+            android:id="@+id/tr1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center|top">
+            <TextView
+                android:id="@+id/textspace1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:background="@android:color/darker_gray"
+                android:text="Country"/>
+            <TextView
+                android:id="@+id/textspace2"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:background="@android:color/darker_gray"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Population"/>
+           />
+        </TableRow>  </TableLayout>
+    </androidx.cardview.widget.CardView>
+    <ListView
+        android:id="@+id/ll"
+        android:layout_below="@id/cd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>
